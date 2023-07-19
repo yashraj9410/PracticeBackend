@@ -8,8 +8,19 @@ const readUser = (req,res) => {
     }
 }
 
-exports.readUser  = readUser;
+// post request 
+const createUser = (req,res) => {
+    const user_data = req.body;
+    if(Object.keys(user_data).length ==0){
+        return res.status(400).send("Bad Request");
+    }
+    res.send(user_data);
+}
 
+// express validator library is used to check reqbody 
+
+exports.readUser  = readUser;
+exports.createUser = createUser
 // http status codes 
 // 200 - successfull OK 
 // 404 - NOt Found 
