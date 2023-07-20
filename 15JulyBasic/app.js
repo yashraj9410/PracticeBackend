@@ -2,18 +2,20 @@
 const express = require('express');
 const app = express();
 const user_router = require('./router/user_routes');
+//const params = require('./router/user_routes');
 // middleware 
 app.use(express.json());
 
 app.use("/user", user_router);
 // app.use("/profile", profile_router);
+//app.use('/:id',params)
 // listen function to create a server 
-app.listen(3000, ()=>{
+app.listen(4000, ()=>{
     console.log("running")
 })
-
-// callback functions , promises 
-
-// app.use("/")
+                              
+// callback functions , promises                                                                                                                                    
+                       
+// app.use("/")                                                                                                                      
 
 

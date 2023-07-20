@@ -16,11 +16,41 @@ const createUser = (req,res) => {
     }
     res.send(user_data);
 }
-
+// req  params
+//  const params = (req,res)=>{
+//          const id = req.params.id;
+//          res.send("hiii");
+//          }
 // express validator library is used to check reqbody 
+const student =(req,res)=>{
+    const student_data=req.body;
+    if(Object.keys(student_data).length==0){
+        return res.status(400).send('bad');
+    }else{
+        res.status(200).send(req.body);
+    }
+}
+const customer = (req ,res)=>{
+    const customer_data = {
+        "nmae":"yash",
+        "vgame":"cricket",
+        "mdkd":"cdnu"
+         }
+         if(Object.keys(customer_data).length==0){
+             res.status(400).send('bad');
+        }else{
+            res.status(200).json({customer_data});
+        } 
+}
 
-exports.readUser  = readUser;
-exports.createUser = createUser
+exports.readUser    = readUser;
+exports.createUser  = createUser;
+exports.student  = student;
+exports.customer = customer ;
+//exports.params    = params;
+
+
+
 // http status codes 
 // 200 - successfull OK 
 // 404 - NOt Found 
