@@ -43,6 +43,10 @@ const customer = (req ,res)=>{
         } 
 }
 
+// mongo function
+const getName = async(req,res) => {
+}
+
 exports.readUser    = readUser;
 exports.createUser  = createUser;
 exports.student  = student;
