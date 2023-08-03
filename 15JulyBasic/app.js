@@ -11,7 +11,7 @@ app.use("/user", user_router);
 // app.use("/profile", profile_router);
 //app.use('/:id',params)
 // listen function to create a server 
-app.listen(4000, ()=>{
+app.listen(4001, ()=>{
     console.log("running")
 })
                               

@@ -8,6 +8,16 @@ const userModel = new Schema({
     name:{
         type: String,
         required: true
+    },
+    email:{
+           type:String,
+           required:true,
+           unique: true
+    },
+    password:{
+        type: Mixed,
+        required:true,
+        min:6
     }
 })
 
