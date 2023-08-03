@@ -1,8 +1,11 @@
 // controller mainly deals with the creation of apis and functions for database operations
-const readUser = (req,res) => {
-    const userData = {"name":"yash","email":"yash@yash.com"}; // request recieved
+const jwt = require('jsonwebtoken')
+
+const signIn = (req,res) => {
+    const userData = {"name":"yash","email":"yash@yash.com", "id":"yash1234"}; // request recieved
     if(userData){
-        res.status(200).json({userData});
+        const token = jwt.sign(userData, 'secret1234', {expiresIn: '30m'})
+        res.status(200).json({token});
     } else {
         res.status(400).json({error:"Bad Request"})
     }
@@ -32,7 +35,7 @@ const student =(req,res)=>{
 }
 const customer = (req ,res)=>{
     const customer_data = {
-        "nmae":"yash",
+        "name":"yash",
         "vgame":"cricket",
         "mdkd":"cdnu"
          }
@@ -47,7 +50,7 @@ const customer = (req ,res)=>{
 const getName = async(req,res) => {
 }
 
-exports.readUser    = readUser;
+exports.signIn    = signIn;
 exports.createUser  = createUser;
 exports.student  = student;
 exports.customer = customer ;

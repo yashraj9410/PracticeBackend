@@ -11,7 +11,11 @@
   "dependencies": {
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
+<<<<<<< HEAD
     "mongodb": "^5.7.0",
+=======
+    "jsonwebtoken": "^9.0.1",
+>>>>>>> ebbec7e968a1550b5fff14220e201a206ae35e6d
     "mongoose": "^7.4.0",
     "nodemon": "^3.0.1"
   }
