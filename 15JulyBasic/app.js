@@ -2,10 +2,11 @@
 const express = require('express');
 const app = express();
 const user_router = require('./router/user_routes');
+const db = require('./model/db');
+
 //const params = require('./router/user_routes');
 // middleware 
 app.use(express.json());
-
 app.use("/user", user_router);
 // app.use("/profile", profile_router);
 //app.use('/:id',params)
