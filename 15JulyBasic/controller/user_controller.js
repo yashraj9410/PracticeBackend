@@ -1,5 +1,13 @@
 // controller mainly deals with the creation of apis and functions for database operations
 const jwt = require('jsonwebtoken')
+const userModel = require('../model/user_model')
+
+const registeruser = async(req, res) => {
+    const userData = {"name":"yash","email":"yash@yash.com", "password":"yash1234"};
+    await userModel.create(userData)
+    .then(data => res.status(200).send("User Registered"))
+    .catch(error => res.send(error))
+}
 
 const signIn = (req,res) => {
     const userData = {"name":"yash","email":"yash@yash.com", "id":"yash1234"}; // request recieved
@@ -54,6 +62,7 @@ exports.signIn    = signIn;
 exports.createUser  = createUser;
 exports.student  = student;
 exports.customer = customer ;
+exports.registeruser= registeruser;
 //exports.params    = params;
 
 

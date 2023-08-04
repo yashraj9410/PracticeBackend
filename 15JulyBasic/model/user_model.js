@@ -15,7 +15,7 @@ const userModel = new Schema({
            unique: true
     },
     password:{
-        type: Mixed,
+        type: String,
         required:true,
         min:6
     }
