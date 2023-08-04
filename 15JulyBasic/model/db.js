@@ -23,10 +23,10 @@ const client = new MongoClient(url);
  const dataBase = 'Sports'
  async function getData(){
      let result  = await client.connect();
-     console.log("conneected  to server");
+    
       let db =  result.db(dataBase)
      let collection = db.collection('Cricket');
-     //console.log(collection);
+   console.log("connected  to server");
      let data = await collection.find({}).toArray();
      console.log(data);
     }
